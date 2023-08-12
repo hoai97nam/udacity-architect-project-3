@@ -1,0 +1,7 @@
+Research and analyze which of the vulnerabilities appear to be related to the code that was deployed for the environment in this project.
+Full administrative access was permitted per IAM policy. 
+The load balancer doesn't switch requests from HTTP to HTTPS. 
+No IAM password policy exists, and CloudTrail Trail is not mentioned, S3 bucket doesn't have any logging.
+
+Bonus - provide recommendations on how to remediate the vulnerabilities.
+Should limit traffic on the load balancer, add security groups, activate MFA for root access, and set IAM policy to read-only.

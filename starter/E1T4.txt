@@ -1,0 +1,12 @@
+Based on the architecture diagram, and the steps you have taken so far to upload data and access the application web service, identify at least 2 obvious poor practices as it relates to security.  Include justification.
+
+# Poor practice 1
+Gateway VPC Endpoint for S3 should be used to simplify access to S3 resources from within a VPC. 
+Prior to the introduction of endpoints, VPC resources had to go out to the internet to communicate with S3. 
+This poses a potential security and availability risk, and complicates infrastructure architecture. 
+
+# Poor practice 2
+In the public subnet, for example, port 5000 is open to the internet while port 443 is not.
+To prevent exposure to the internet, the instance should be in a private subnet, utilize port 443 rather than 80, and only permit access to port 5000 from the App Load Balancer SG.
+
+IAM role could be used to access and change content in any S3 bucket.
